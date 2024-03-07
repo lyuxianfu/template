@@ -1,4 +1,4 @@
-import {defineConfig, loadEnv} from "vite";
+import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
@@ -8,14 +8,15 @@ import path from "path";
 import CreateHtmlPlugin from "./plugin/html-plugin.js";
 import BuildPlugin from "./plugin/build-plugin.js";
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) => {
+export default defineConfig(({ mode }) => {
   const { VITE_API_DOMAIN } = loadEnv(mode, process.cwd());
   const version =
-      new Date().toLocaleDateString("zh") +
-      " " +
-      new Date().toLocaleTimeString("zh");
+    new Date().toLocaleDateString("zh") +
+    " " +
+    new Date().toLocaleTimeString("zh");
   console.log("build version: ", version);
   return {
+    isDev: mode === "development",
     plugins: [
       vue(),
       VueSetupExtend(),

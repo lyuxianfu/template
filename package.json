@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "archiver": "^7.0.0",
     "axios": "^1.6.7",
     "element-plus": "^2.5.6",
     "eslint-config-prettier": "^9.1.0",
